@@ -15,6 +15,10 @@ app.use(cors());
 app.use(helmet());
 app.use(hpp());
 
+app.get("/",(req,res){
+        res.send("this is app");
+});
+
 app.use(function(req, res, next) {
     if (toobusy()) {
         logger.error("server is too busy.please try again later")
